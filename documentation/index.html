@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Speed Typing Game Documentation</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;Fast Math Quiz Game&rdquo; Documentation by &ldquo;Ibrahim Odeh&rdquo; v1.3.0</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;Fast Math Quiz Game&rdquo;</h1>
+		
+		<center><img src="assets/images/app_logo.png" alt="App Logo" height="100px" width="100px"	/></center>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 14/03/2021<br>
+					Updated: 16/01/2023<br>
+					By: Ibrahim Odeh<br>
+					Email: <a href="mailto:support@ibrahimodeh.com">support@ibrahimodeh.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my theme. It really means a lot. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://themeforest.net/user/ibrahimodeh">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Documentation Contents:</h2>
+		<ol class="alpha">
+			<li><a href="#appname">How to change app name?</a></li>
+			<li><a href="#privacypolicy">How to change the Privacy Policy?</a></li>
+			<li><a href="#packagename">How to change the package name?</a></li>
+			<li><a href="#editquestions">How to change or add Questions?</a></li>
+			<li><a href="#admob">How to change admob id?</a></li>
+			<li><a href="#support">Need Support?</a></li>
+			<li><a href="#feedback">Your Feedback</a></li>
+			<li><a href="#contact">Contact Me</a></li>
+		</ol>
+		
+		<hr>
+		
+		<h3 id="appname"><strong>A) How to change app name?</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+		<li>Open Android Studio > app > res > values > strings.xml</li>
+		<li>Enter your app name inside <b>"app_name"</b> string tag:<br />
+		<code>&lt;string name="app_name"&gt;<b>Math Quiz</b>&lt;/string&gt;</code></li>
+		<li>You can also change other string text here.</li>
+		</p>
+		
+		<img src="assets/images/image1.png" alt="change app name" />
+		
+		<br />
+		<br />
+
+		<hr>
+
+		<h3 id="privacypolicy"><strong>B) How to change the Privacy Policy?</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+		<li>Open Android Studio > app > java > com > ibrahimtornado > mathquiz > MainActivity - Line 135</li>
+		<li>Change URL to your privacy policy URL</li>
+		</p>
+		
+		
+		<img src="assets/images/image2.png" alt="change privacy policy" />
+		
+		<br />
+		<br />
+
+		<hr>
+		
+		<h3 id="packagename"><strong>C) How to change the package name?</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+		<p>You can change it easily from Android Studio. Here are the steps:</p>
+		<li>In the Android panel, click on the little gear icon. Uncheck/Deselect the Compact Empty Middle Packages option.</li>
+		<li>Your package directory will now be broken up in individual directories.</li>
+		<li>Individually select each directory you want to rename, and: Right-click itSelect RefactorClick on RenameIn the Pop-up dialog.</li>
+		<li>Click on Rename Package instead of Rename Directory Enter the new name and hit RefactorAllow a minute to let Android Studio update all changes.</li>
+		<li>Now open your Gradle Script > build.gradle (Module: "App Name.app"). Update the applicationId to your Package Name and Sync Gradle, if it hasn't already been updated automatically.</li>
+		
+		</p>
+		
+		<img src="assets/images/image3.png" alt="change the package name 1" />
+		<img src="assets/images/image4.png" alt="change the package name 2" />
+		<img src="assets/images/image5.png" alt="change the package name 3" />
+		<img src="assets/images/image6.png" alt="change the package name 4" />
+		<img src="assets/images/image7.png" alt="change the package name 5" />
+		
+		<br />
+		<br />
+		
+		<hr>
+		
+		<h3 id="editquestions"><strong>D) How to change or add Questions?</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+		
+		<li>Within the game there are 100 Question, you can modify them as you like or add more questions with ease, just follow the following steps:</li>
+		<li>Open app > java > mathquiz > helper > Questions In line 12 you can find The First question of the game, you can edit any question you want</li>
+		<li>To add a new question,add this text after line 919 as follows:
+		<p><code>if (QuestionId == 101) // You must increase the question number every time</code></p>
+        <code><p>{</code></p>
+        <code><p>    theData[0] = "1 + 1 = ?";</code></p>
+        <code><p>    theData[1] = "ANSWER A";</code></p>
+        <code><p>    theData[2] = "ANSWER B";</code></p>
+        <code><p>    theData[3] = "ANSWER C";</code></p>
+        <code><p>    theData[4] = "ANSWER D";</code></p>
+        <code><p>    theData[5] = "ANSWER A"; // The Right Answer</code></p>
+        }</code></p></li>
+		<li>After adding more questions, you must change this number (as in the picture 2 below) to the new number of questions.</li>
+		
+		</p>
+		
+		<img src="assets/images/image8.png" alt="change or add levels" />
+		<img src="assets/images/image9.png" alt="change or add levels" />
+		
+		<br />
+		<br />
+		
+		<hr>
+		
+		<h3 id="admob"><strong>E) How to change admob id?</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+		
+		<li>Open Android Studio > app > res > values > strings.xml</li>
+		<li>You have to replace your live Admob Id with Test admob Id.</li>
+		<li>Do not forget to add the "admob_app_id"</li>
+		
+		</p>
+		
+				<img src="assets/images/image10.png" alt="change Admob Id" />
+		
+		<br />
+		<br />
+		
+		<hr>
+		
+		<h3 id="support"><strong>F) Need Support?</strong> - <a href="#toc">top</a></h3>
+		
+		<p>• Its my pleasure to serve my service and support. Please Contact Me.</p>
+		<p>• You can Contact Me on Skype: <a href="https://join.skype.com/invite/icM32xNay52D" target="_blank" style='color:#3c55d1'>Click Here</a></p>
+		
+		<p>• To help my customers, I constantly be in touch with every customer if they need any assistance regarding my product. 
+		I offer my customers a support from  <strong> Sun – Thu 8.00 am to 5.00 pm (GMT +2.00)</strong></p>
+	
+	    <p>• Typically I reply my customers for all the questions and queries within 24 hours of time via comments, support forum or emails.</p>
+		
+		<p>Thank You :)</p>
+	
+		
+		<hr>
+		
+		<h3 id="feedback"><strong>G) Your Feedback</strong> - <a href="#toc">top</a></h3>
+		
+		<p>Dear valuable customer,
+		Thank you very much for choosing my product.
+		It's my pleasure to serve top-notch service to you.
+		Please give me your honest feedback that will help me to make a more strong and reliable product by click here <a href="https://codecanyon.net/downloads" style='color:#3c55d1' target="_blank">Rate My Product</a>.
+		Thank you very much. and Good Luck.</p>
+	
+		
+		<hr>
+		
+		<h3 id="contact"><strong>H) Contact Me</strong> - <a href="#toc">top</a></h3>
+		
+		<p>• Contact me today to find out how we can help you.</p>
+		<p>- My Email : support@ibrahimodeh.com</p>
+		<p>- My Skype : <a href="https://join.skype.com/invite/icM32xNay52D" >Ibrahim Odeh</a> </p>
+		<p>Thank you very much.</p>
+	
+		
+	</div><!-- end div .container -->
+	
+	<center><img src="assets/images/MyLogo.png" alt="My Logo" height="100px" width="100px"	/></center>
+	<center><Strong>© All Rights Reserved IbrahimOdeh</strong></center>
+	
+</body>
+</html>
